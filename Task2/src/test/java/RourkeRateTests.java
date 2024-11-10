@@ -1,9 +1,10 @@
 // Seán Rourke
 // C00251168
 
-package cm;
-
 import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,13 +19,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -37,13 +40,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -56,13 +61,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -75,13 +82,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -94,13 +103,15 @@ class RourkeRateTests {
         Period normal = new Period(0, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -113,13 +124,15 @@ class RourkeRateTests {
         Period normal = new Period(18, 24);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -132,13 +145,15 @@ class RourkeRateTests {
         Period normal = new Period(10, 15);
         Period reduced = new Period(0, 10);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -151,13 +166,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 24);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -170,13 +187,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(0);
+        BigDecimal reducedRate = new BigDecimal(0);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 0, 0);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -189,13 +208,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(10);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 10, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -208,13 +229,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(0);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 0);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -227,13 +250,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(10);
+        BigDecimal reducedRate = new BigDecimal(10);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 10, 10);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -246,13 +271,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(5);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 5);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -265,13 +292,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -284,13 +313,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -303,13 +334,15 @@ class RourkeRateTests {
         Period normal = new Period(-1, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -322,13 +355,15 @@ class RourkeRateTests {
         Period normal = new Period(20, 15);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -341,13 +376,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(-1, 5);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -360,13 +397,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 25);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -379,13 +418,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(-1);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, -1, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -398,13 +439,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(11);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 11, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -417,13 +460,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(-1);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, -1);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -436,13 +481,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(11);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 11);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -455,13 +502,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(2);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 2, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -475,14 +524,16 @@ class RourkeRateTests {
         Period normal2 = new Period(3,7);
         Period reduced = new Period(10, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal1);
         normalPeriods.add(normal2);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -496,14 +547,16 @@ class RourkeRateTests {
         Period reduced1 = new Period(10, 18);
         Period reduced2 = new Period(17, 21);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced1);
-        reducedPeriods.add(reduced2)
+        reducedPeriods.add(reduced2);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -516,13 +569,15 @@ class RourkeRateTests {
         Period normal = new Period(5, 10);
         Period reduced = new Period(9, 18);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
 
         try {
-            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+            Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         } catch (IllegalArgumentException e){
             throw e;
         }
@@ -538,13 +593,14 @@ class RourkeRateTests {
         Period reduced = new Period(10, 18);
         Period periodStay = new Period(6, 10);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
-
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
         CarParkKind kind = CarParkKind.STAFF;
-        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal("20");
 
         assertEquals(expectedOutput, rate.calculate(periodStay));
@@ -556,13 +612,14 @@ class RourkeRateTests {
         Period reduced = new Period(10, 18);
         Period periodStay = new Period(10, 15);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
-
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
         CarParkKind kind = CarParkKind.STAFF;
-        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal("15");
 
         assertEquals(expectedOutput, rate.calculate(periodStay));
@@ -574,13 +631,14 @@ class RourkeRateTests {
         Period reduced = new Period(10, 18);
         Period periodStay = new Period(2, 4);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
-
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
         CarParkKind kind = CarParkKind.STAFF;
-        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal("0");
 
         assertEquals(expectedOutput, rate.calculate(periodStay));
@@ -592,13 +650,14 @@ class RourkeRateTests {
         Period reduced = new Period(10, 18);
         Period periodStay = new Period(4, 7);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
-
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
         CarParkKind kind = CarParkKind.STAFF;
-        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal("15");
 
         assertEquals(expectedOutput, rate.calculate(periodStay));
@@ -610,13 +669,14 @@ class RourkeRateTests {
         Period reduced = new Period(10, 18);
         Period periodStay = new Period(15, 20);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
-
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
         CarParkKind kind = CarParkKind.STAFF;
-        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal("9");
 
         assertEquals(expectedOutput, rate.calculate(periodStay));
@@ -628,13 +688,14 @@ class RourkeRateTests {
         Period reduced = new Period(10, 18);
         Period periodStay = new Period(8, 12);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
-
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
         CarParkKind kind = CarParkKind.STAFF;
-        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal("16");
 
         assertEquals(expectedOutput, rate.calculate(periodStay));
@@ -646,13 +707,14 @@ class RourkeRateTests {
         Period reduced = new Period(10, 18);
         Period periodStay = new Period(2, 12);
 
-        ArrayList<Period> normalPeriods = new ArrayList();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
         normalPeriods.add(normal);
-        ArrayList<Period> reducedPeriods = new ArrayList();
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(reduced);
-
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
         CarParkKind kind = CarParkKind.STAFF;
-        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, 5, 3);
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal("31");
 
         assertEquals(expectedOutput, rate.calculate(periodStay));

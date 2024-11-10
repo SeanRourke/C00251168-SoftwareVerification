@@ -1,5 +1,3 @@
-package cm;
-
 import java.util.List;
 
 public class Period {
