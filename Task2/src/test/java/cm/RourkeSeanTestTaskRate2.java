@@ -232,7 +232,6 @@ class RateTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate));
     }
 
-
     // Test Cases for Calculate
 
     @Test
