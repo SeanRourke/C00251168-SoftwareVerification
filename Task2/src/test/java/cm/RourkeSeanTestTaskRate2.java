@@ -116,7 +116,7 @@ class RateTest {
         Assertions.assertNotNull(rate);
     }
 
-    /*@Test
+    @Test
     void test_9_ValidLowerBoundaryNormalRate() {
 
         normalRate = new BigDecimal(0);
@@ -124,7 +124,7 @@ class RateTest {
 
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         Assertions.assertNotNull(rate);
-    }*/
+    }
 
     @Test
     void test_10_ValidUpperBoundaryNormalRate() {
@@ -144,8 +144,8 @@ class RateTest {
         Assertions.assertNotNull(rate);
     }
 
-    /*@Test
-    void test_12_ValidUpperBoundaryNormalRate() {
+    @Test
+    void test_12_ValidUpperBoundaryReducedRate() {
 
         normalRate = new BigDecimal(10);
         reducedRate = new BigDecimal(10);
@@ -162,7 +162,7 @@ class RateTest {
 
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         Assertions.assertNotNull(rate);
-    }*/
+    }
 
     @Test
     void test_16_InvalidLowerBoundaryNormalRate() {
@@ -265,7 +265,6 @@ class RateTest {
         Assertions.assertEquals(expectedOutput, rate.calculate(periodStay));
     }
 
-    // !
     @Test
     void test_4_FreeAndNormalPeriod() {
 
