@@ -6,6 +6,9 @@ package cm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class PeriodTest {
 
     // Test Cases for Period
@@ -93,6 +96,15 @@ class PeriodTest {
 
         int start = 24;
         int end = 24;
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Period(start, end));
+    }
+
+    @Test
+    void test_10_NegativeEnd() {
+
+        int start = 0;
+        int end = -1;
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Period(start, end));
     }

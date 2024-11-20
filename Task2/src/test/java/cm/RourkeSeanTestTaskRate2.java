@@ -165,7 +165,7 @@ class RateTest {
     }
 
     @Test
-    void test_16_InvalidLowerBoundaryNormalRate() {
+    void test_14_InvalidLowerBoundaryNormalRate() {
 
         normalRate = new BigDecimal(-1);
 
@@ -173,7 +173,7 @@ class RateTest {
     }
 
     @Test
-    void test_17_InvalidUpperBoundaryNormalRate() {
+    void test_15_InvalidUpperBoundaryNormalRate() {
 
         normalRate = new BigDecimal(11);
 
@@ -181,7 +181,7 @@ class RateTest {
     }
 
     @Test
-    void test_18_InvalidLowerBoundaryReducedRateRate() {
+    void test_16_InvalidLowerBoundaryReducedRateRate() {
 
         reducedRate = new BigDecimal(-1);
 
@@ -189,7 +189,7 @@ class RateTest {
     }
 
     @Test
-    void test_19_InvalidUpperBoundaryReducedRate() {
+    void test_17_InvalidUpperBoundaryReducedRate() {
 
         reducedRate = new BigDecimal(11);
 
@@ -197,7 +197,7 @@ class RateTest {
     }
 
     @Test
-    void test_20_NormalRateLessThanReducedRate() {
+    void test_28_NormalRateLessThanReducedRate() {
 
         normalRate = new BigDecimal(2);
 
@@ -205,7 +205,7 @@ class RateTest {
     }
 
     @Test
-    void test_21_OverlappingNormalPeriods() {
+    void test_19_OverlappingNormalPeriods() {
 
         Period normal2 = new Period(3,7);
         normalPeriods.add(normal2);
@@ -214,7 +214,7 @@ class RateTest {
     }
 
     @Test
-    void test_22_OverlappingReducedPeriods() {
+    void test_20_OverlappingReducedPeriods() {
 
         Period reduced2 = new Period(17,21);
         reducedPeriods.add(reduced2);
@@ -228,6 +228,38 @@ class RateTest {
         reducedPeriods.removeFirst();
         Period reduced = new Period(9, 18);
         reducedPeriods.add(reduced);
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate));
+    }
+
+    @Test
+    void test_22_NullNormalPeriods() {
+
+        normalPeriods = null;
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate));
+    }
+
+    @Test
+    void test_23_NullReducedPeriods() {
+
+        reducedPeriods = null;
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate));
+    }
+
+    @Test
+    void test_24_NullNormalRate() {
+
+        normalRate = null;
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate));
+    }
+
+    @Test
+    void test_25_NullReducedRate() {
+
+        reducedRate = null;
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate));
     }
@@ -300,6 +332,17 @@ class RateTest {
         Period periodStay = new Period(2, 12);
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal(31);
+
+        Assertions.assertEquals(expectedOutput, rate.calculate(periodStay));
+    }
+
+    @Test
+    void test_8_Visitor() {
+
+        Period periodStay = new Period(6, 10);
+        kind = CarParkKind.VISITOR;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(0);
 
         Assertions.assertEquals(expectedOutput, rate.calculate(periodStay));
     }
