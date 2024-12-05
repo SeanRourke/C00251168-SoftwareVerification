@@ -362,4 +362,17 @@ class RateTest {
 
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    void test_10_Student() {
+        Period periodStay = new Period(5, 10);
+        kind = CarParkKind.STUDENT;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(20.125);
+        int expected = 0;
+
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
+    }
 }

@@ -110,6 +110,14 @@ public class Rate {
             } else {
                 return BigDecimal.valueOf(4);
             }
+        } else if (this.kind == CarParkKind.STUDENT) {
+            if (total.compareTo(BigDecimal.valueOf(5.5)) > 0) {
+                BigDecimal reduced = total.subtract(BigDecimal.valueOf(5.5));
+                reduced = reduced.multiply(BigDecimal.valueOf(0.75));
+                return reduced.add(BigDecimal.valueOf(5.5));
+            } else {
+                return total;
+            }
         }
         return (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
                 this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
