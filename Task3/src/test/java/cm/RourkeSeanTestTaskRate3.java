@@ -271,7 +271,7 @@ class RateTest {
 
         Period periodStay = new Period(6, 10);
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
-        BigDecimal expectedOutput = new BigDecimal(20);
+        BigDecimal expectedOutput = new BigDecimal(16);
 
         Assertions.assertEquals(expectedOutput, rate.calculate(periodStay));
     }
@@ -331,7 +331,7 @@ class RateTest {
 
         Period periodStay = new Period(2, 12);
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
-        BigDecimal expectedOutput = new BigDecimal(31);
+        BigDecimal expectedOutput = new BigDecimal(16);
 
         Assertions.assertEquals(expectedOutput, rate.calculate(periodStay));
     }
@@ -409,6 +409,32 @@ class RateTest {
         kind = CarParkKind.STUDENT;
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal(5);
+        int expected = 0;
+
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void test_13_StaffBelowMax() {
+        Period periodStay = new Period(5, 6);
+        kind = CarParkKind.STAFF;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(5);
+        int expected = 0;
+
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void test_14_StaffMax() {
+        Period periodStay = new Period(5, 10);
+        kind = CarParkKind.STAFF;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(16);
         int expected = 0;
 
         int result = expectedOutput.compareTo(rate.calculate(periodStay));

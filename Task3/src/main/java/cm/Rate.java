@@ -118,9 +118,13 @@ public class Rate {
             } else {
                 return total;
             }
+        } else {
+            if (total.compareTo(BigDecimal.valueOf(16)) > 0) {
+                return BigDecimal.valueOf(16);
+            } else {
+                return total;
+            }
         }
-        return (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
-                this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
     }
 
 }
