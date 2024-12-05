@@ -337,7 +337,7 @@ class RateTest {
     }
 
     @Test
-    void test_8_Visitor() {
+    void test_8_VisitorNotFree() {
 
         Period periodStay = new Period(6, 10);
         kind = CarParkKind.VISITOR;
@@ -351,7 +351,21 @@ class RateTest {
     }
 
     @Test
-    void test_9_ManagementLowerBoundary() {
+    void test_9_VisitorFree() {
+
+        Period periodStay = new Period(6, 8);
+        kind = CarParkKind.VISITOR;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(0);
+        int expected = 0;
+
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void test_10_ManagementLowerBoundary() {
         Period periodStay = new Period(1, 3);
         kind = CarParkKind.MANAGEMENT;
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
@@ -364,11 +378,37 @@ class RateTest {
     }
 
     @Test
-    void test_10_Student() {
+    void test_11_ManagementAboveMinimum() {
+        Period periodStay = new Period(6, 10);
+        kind = CarParkKind.MANAGEMENT;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(20);
+        int expected = 0;
+
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void test_11_StudentWithDiscount() {
         Period periodStay = new Period(5, 10);
         kind = CarParkKind.STUDENT;
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
         BigDecimal expectedOutput = new BigDecimal(20.125);
+        int expected = 0;
+
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void test_12_StudentNoDiscount() {
+        Period periodStay = new Period(5, 6);
+        kind = CarParkKind.STUDENT;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(5);
         int expected = 0;
 
         int result = expectedOutput.compareTo(rate.calculate(periodStay));
