@@ -342,7 +342,7 @@ class RateTest {
         Period periodStay = new Period(6, 10);
         kind = CarParkKind.VISITOR;
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
-        BigDecimal expectedOutput = new BigDecimal(0);
+        BigDecimal expectedOutput = new BigDecimal(20);
 
         Assertions.assertEquals(expectedOutput, rate.calculate(periodStay));
     }
