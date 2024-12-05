@@ -342,9 +342,24 @@ class RateTest {
         Period periodStay = new Period(6, 10);
         kind = CarParkKind.VISITOR;
         Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
-        BigDecimal expectedOutput = new BigDecimal(20);
+        BigDecimal expectedOutput = new BigDecimal(5);
+        int expected = 0;
 
-        Assertions.assertEquals(expectedOutput, rate.calculate(periodStay));
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
     }
 
+    @Test
+    void test_9_ManagementLowerBoundary() {
+        Period periodStay = new Period(1, 3);
+        kind = CarParkKind.MANAGEMENT;
+        Rate rate = new Rate(kind, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        BigDecimal expectedOutput = new BigDecimal(4);
+        int expected = 0;
+
+        int result = expectedOutput.compareTo(rate.calculate(periodStay));
+
+        Assertions.assertEquals(expected, result);
+    }
 }

@@ -96,7 +96,21 @@ public class Rate {
     public BigDecimal calculate(Period periodStay) {
         int normalRateHours = periodStay.occurrences(normal);
         int reducedRateHours = periodStay.occurrences(reduced);
+        BigDecimal total = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
         // removed free visitor parking as it is not stated in the specification
+        if (this.kind == CarParkKind.VISITOR) {
+            if (total.compareTo(BigDecimal.TEN) > 0) {
+                return total.subtract(BigDecimal.TEN).multiply(BigDecimal.valueOf(0.5));
+            } else {
+                return BigDecimal.ZERO;
+            }
+        } else if (this.kind == CarParkKind.MANAGEMENT) {
+            if (total.compareTo(BigDecimal.valueOf(4)) > 0) {
+                return total;
+            } else {
+                return BigDecimal.valueOf(4);
+            }
+        }
         return (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
                 this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
     }
